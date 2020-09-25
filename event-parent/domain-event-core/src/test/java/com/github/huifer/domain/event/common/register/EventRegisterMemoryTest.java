@@ -1,7 +1,7 @@
 package com.github.huifer.domain.event.common.register;
 
 import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.BaseEvent;
+import com.github.huifer.domain.event.common.model.event.BaseEvent;
 import org.junit.Assert;
 import org.junit.Before;
 

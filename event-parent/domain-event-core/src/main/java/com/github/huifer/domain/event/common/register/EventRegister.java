@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.BaseEvent;
+import com.github.huifer.domain.event.common.model.event.BaseEvent;
 import com.github.huifer.domain.event.common.util.Container;
 
 public interface EventRegister {
@@ -14,14 +14,14 @@ public interface EventRegister {
 		return Container.event().get(eventClass);
 	}
 
-	default Map<Class<?>, List<EventHandler<BaseEvent>>> map() {
+	default Map<Class<? extends  BaseEvent>, List<EventHandler<BaseEvent>>> map() {
 		return Container.event();
 	}
 
 	void register(BaseEvent event, List<EventHandler<? extends BaseEvent>> eventHands);
 
 
-	void register(Class<?> eventClass, EventHandler<? extends BaseEvent> handler);
+	void register(Class<? extends  BaseEvent> eventClass, EventHandler<? extends BaseEvent> handler);
 
 	void register(BaseEvent event, EventHandler<? extends BaseEvent> handler);
 }

@@ -5,16 +5,16 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.BaseEvent;
+import com.github.huifer.domain.event.common.model.event.BaseEvent;
 
 public class Container {
-	protected static Map<Class<?>, List<EventHandler<BaseEvent>>> handlers = new ConcurrentHashMap<>(64);
+	protected static Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> handlers = new ConcurrentHashMap<>(64);
 
 	private Container() {
 		throw new IllegalStateException("Utility class");
 	}
 
-	public static Map<Class<?>, List<EventHandler<BaseEvent>>> event() {
+	public static Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> event() {
 		return handlers;
 	}
 
