@@ -9,7 +9,8 @@
 	<packaging>pom</packaging>
 	<version>1.0-SNAPSHOT</version>
 	<modules>
-		<module>domain-event-common</module>
+		<module>domain-event-core</module>
+		<module>domain-event-spring-boot</module>
 	</modules>
 
 	<build>
