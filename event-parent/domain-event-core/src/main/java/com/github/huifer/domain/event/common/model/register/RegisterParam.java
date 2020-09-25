@@ -7,11 +7,19 @@ import com.github.huifer.domain.event.common.handler.EventHandler;
 import com.github.huifer.domain.event.common.model.event.BaseEvent;
 
 public class RegisterParam {
+	Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> handlers;
+
 	private String ipPort;
 
 	private String name;
 
-	Map<Class<?>, List<EventHandler<BaseEvent>>> handlers;
+	public Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> getHandlers() {
+		return handlers;
+	}
+
+	public void setHandlers(Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> handlers) {
+		this.handlers = handlers;
+	}
 
 	public String getIpPort() {
 		return ipPort;

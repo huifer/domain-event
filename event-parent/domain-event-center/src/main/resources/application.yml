@@ -1,0 +1,4 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb+srv://huifer:l2R5MNvl3XcEo21r@free.yixgv.azure.mongodb.net/test
