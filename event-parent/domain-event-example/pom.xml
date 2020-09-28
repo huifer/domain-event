@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<artifactId>domain-event-example</artifactId>
-<name>domain-event-example</name>
+	<name>domain-event-example</name>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
