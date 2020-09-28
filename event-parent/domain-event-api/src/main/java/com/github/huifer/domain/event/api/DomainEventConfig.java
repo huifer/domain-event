@@ -1,4 +1,4 @@
-package com.github.huifer.domain.event.common.conf;
+package com.github.huifer.domain.event.api;
 
 public interface DomainEventConfig {
 	void conf();

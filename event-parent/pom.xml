@@ -12,6 +12,7 @@
 		<module>domain-event-core</module>
 		<module>domain-event-example</module>
 		<module>domain-event-center</module>
+		<module>domain-event-api</module>
 	</modules>
 
 	<build>

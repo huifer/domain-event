@@ -1,6 +1,6 @@
 package com.github.huifer.domain.event.sb.entity;
 
-import com.github.huifer.domain.event.common.model.event.SuperEvent;
+import com.github.huifer.domain.event.model.event.SuperEvent;
 import com.github.huifer.domain.event.sb.event.CreateUserEvent;
 import com.github.huifer.domain.event.sb.event.UpdateUserEvent;
 

@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.event.BaseEvent;
+import com.github.huifer.domain.event.model.event.BaseEvent;
 
 public class RegisterParam {
 	Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> handlers;

@@ -1,4 +1,4 @@
-package com.github.huifer.domain.event.common.model.event;
+package com.github.huifer.domain.event.model.event;
 
 import java.util.ArrayList;
 import java.util.List;

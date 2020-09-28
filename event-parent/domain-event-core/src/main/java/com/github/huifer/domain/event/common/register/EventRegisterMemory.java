@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.event.BaseEvent;
+import com.github.huifer.domain.event.api.EventHandler;
 import com.github.huifer.domain.event.common.util.Container;
+import com.github.huifer.domain.event.model.event.BaseEvent;
 
-public class EventRegisterMemory implements EventRegister {
+public class EventRegisterMemory {
 
-	@Override
 	public void register(BaseEvent event, List<EventHandler<? extends BaseEvent>> eventHands) {
 
 		List<EventHandler<BaseEvent>> eventHandlers = getObject().get(event.getClass());
@@ -32,12 +31,11 @@ public class EventRegisterMemory implements EventRegister {
 
 	}
 
-	private Map<Class<? extends  BaseEvent>, List<EventHandler<BaseEvent>>> getObject() {
+	private Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> getObject() {
 		return Container.event();
 	}
 
-	@Override
-	public void register(Class<? extends  BaseEvent> eventClass, EventHandler<? extends BaseEvent> handler) {
+	public void register(Class<? extends BaseEvent> eventClass, EventHandler<? extends BaseEvent> handler) {
 		List<EventHandler<BaseEvent>> eventHandlers = getObject().get(eventClass);
 		if (eventHandlers != null) {
 			eventHandlers.add((EventHandler<BaseEvent>) handler);
@@ -50,7 +48,6 @@ public class EventRegisterMemory implements EventRegister {
 		getObject().put(eventClass, eventHandlers);
 	}
 
-	@Override
 	public void register(BaseEvent event, EventHandler<? extends BaseEvent> handler) {
 		List<EventHandler<BaseEvent>> eventHandlers = getObject().get(event.getClass());
 
@@ -62,5 +59,9 @@ public class EventRegisterMemory implements EventRegister {
 			eventHandlers.add((EventHandler<BaseEvent>) handler);
 		}
 		getObject().put(event.getClass(), eventHandlers);
+	}
+
+	public Map<Class<? extends BaseEvent>, List<EventHandler<BaseEvent>>> map() {
+		return Container.event();
 	}
 }

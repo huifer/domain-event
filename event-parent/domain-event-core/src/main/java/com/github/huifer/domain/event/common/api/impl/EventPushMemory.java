@@ -3,10 +3,10 @@ package com.github.huifer.domain.event.common.api.impl;
 import java.util.List;
 import java.util.Map;
 
-import com.github.huifer.domain.event.common.api.EventPush;
-import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.event.BaseEvent;
+import com.github.huifer.domain.event.api.EventHandler;
+import com.github.huifer.domain.event.api.EventPush;
 import com.github.huifer.domain.event.common.util.Container;
+import com.github.huifer.domain.event.model.event.BaseEvent;
 
 public class EventPushMemory implements EventPush {
 	@Override

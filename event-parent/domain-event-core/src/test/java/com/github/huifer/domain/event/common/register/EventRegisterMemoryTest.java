@@ -1,12 +1,12 @@
 package com.github.huifer.domain.event.common.register;
 
-import com.github.huifer.domain.event.common.handler.EventHandler;
-import com.github.huifer.domain.event.common.model.event.BaseEvent;
+import com.github.huifer.domain.event.api.EventHandler;
+import com.github.huifer.domain.event.model.event.BaseEvent;
 import org.junit.Assert;
 import org.junit.Before;
 
 public class EventRegisterMemoryTest {
-	EventRegister register;
+	EventRegisterMemory register;
 
 	@Before
 	public void init() {
@@ -16,6 +16,10 @@ public class EventRegisterMemoryTest {
 	@org.junit.Test
 	public void register() {
 		BaseEvent baseEvent = new BaseEvent() {
+			@Override
+			protected String eventName() {
+				return "test event";
+			}
 		};
 		EventHandler<BaseEvent> eventHandler = new EventHandler<BaseEvent>() {
 			@Override
