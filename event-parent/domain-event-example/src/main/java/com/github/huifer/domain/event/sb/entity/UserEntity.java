@@ -1,10 +1,10 @@
 package com.github.huifer.domain.event.sb.entity;
 
-import com.github.huifer.domain.event.model.event.SuperEvent;
+import com.github.huifer.domain.event.model.event.AbstractEvent;
 import com.github.huifer.domain.event.sb.event.CreateUserEvent;
 import com.github.huifer.domain.event.sb.event.UpdateUserEvent;
 
-public class UserEntity extends SuperEvent {
+public class UserEntity extends AbstractEvent {
 
 	private String name;
 
