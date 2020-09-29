@@ -1,7 +1,11 @@
 package com.github.huifer.domain.event.center.service.impl;
 
+import java.util.List;
+
+import com.github.huifer.domain.event.api.EventHandler;
 import com.github.huifer.domain.event.api.EventHandlerAppApi;
 import com.github.huifer.domain.event.center.ex.DomainEventRuntimeException;
+import com.github.huifer.domain.event.model.event.BaseEvent;
 import com.github.huifer.domain.event.model.param.EventHandlerAppRegisterParam;
 import com.github.huifer.domain.event.model.param.EventMappingHandler;
 
@@ -43,10 +47,15 @@ public class EventHandlerAppEventCenterService implements EventHandlerAppApi {
 
 
 	@Override
-	public Object info(EventHandlerAppRegisterParam handlerAppRegisterParam) {
+	public List<EventMappingHandler> info(EventHandlerAppRegisterParam handlerAppRegisterParam) {
 		checkEventHandlerAppRegisterParam(handlerAppRegisterParam.getHost(), handlerAppRegisterParam.getName(), handlerAppRegisterParam.getPort());
 		// todo: query in mysql
 
+		return null;
+	}
+
+	@Override
+	public <T extends BaseEvent> EventHandler<T> getByEvent(Class<T> eventClass) {
 		return null;
 	}
 }
